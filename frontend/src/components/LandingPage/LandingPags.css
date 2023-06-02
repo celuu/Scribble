@@ -1,16 +1,39 @@
+
+.left-arrow {
+    padding: 1px;
+    height: 5vh;
+}
+
+.hamburger-icon {
+    height: 4vh;
+    width:120px; 
+    cursor:pointer; 
+    margin-top:5px; 
+    left:0px;
+}
+
 .hamburger-menu {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: #ccc;
+    padding: 10px;
+}
+
+.logout-button {
     cursor: pointer;
 }
 
-.hamburger-menu span {
-    height: 20px;
-    width: 4px;
-    background-color: #000;
-    margin: 4px 0;
+.nav-bar-arrow-left {
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+.arrow-left-container {
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.arrow-left-container:hover {
+    display: flex;
+    padding: 10px;
+    background-color: red;
 }

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSignup } from "../../hooks/useSignup";
 import "../Login/Login.css";
 import { Spinner } from "@chakra-ui/spinner";
-import GoogleLogo from "../../assets/google-logo.png";
 import AppleLogo from "../../assets/apple-logo.png";
 import { useLocation } from "react-router";
+import { GoogleLogin } from '@react-oauth/google';
 
 const Signup: React.FC = () => {
   const location = useLocation();
@@ -53,7 +53,16 @@ const Signup: React.FC = () => {
           <div className="separator-container">
             <div role="separator" className="separator"></div>
           </div>
-          <button className="form-button continue-with google">
+            <GoogleLogin width="320px"
+            onSuccess={credentialResponse => {
+              console.log(credentialResponse);
+              console.log("it worked")
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
+          {/* <button className="form-button continue-with google">
             <img
               src={GoogleLogo}
               height="14px"
@@ -62,8 +71,8 @@ const Signup: React.FC = () => {
               alt="google logo"
             />
             Continue with Google
-          </button>
-          <button className="form-button continue-with apple">
+          </button> */}
+          {/* <button className="form-button continue-with apple">
             <img
               src={AppleLogo}
               height="16px"
@@ -72,11 +81,11 @@ const Signup: React.FC = () => {
               alt="apple logo"
             />
             Continue with Apple
-          </button>
+          </button> */}
         </form>
         <div className="disclaimer-text">
           <p>
-            By clicking “Continue with Apple/Google/Email” above, you
+            By clicking “Continue with Google/Email” above, you
             acknowledge that you have read and understood, and agree to
             Scribble's{" "}
             <a
